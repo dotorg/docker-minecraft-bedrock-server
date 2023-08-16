@@ -6,10 +6,10 @@ set -eo pipefail
 : "${PREVIEW:=false}"
 
 if [[ -z ${UMASK} ]]; then 
+  echo "Inteheriting umask"
+else
   echo "Setting umask to ${UMASK} ..."
   umask ${UMASK}
-else
-  echo "Inteheriting umask"
 fi
 echo -n "umask value: "
 umask -S
