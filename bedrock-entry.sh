@@ -4,6 +4,10 @@ set -eo pipefail
 
 : "${TMP_DIR:=/tmp}"
 : "${PREVIEW:=false}"
+: "${UMASK:=002}"
+
+echo "Setting UMASK to ${UMASK} ..."
+umask ${UMASK}
 
 function isTrue() {
   case "${1,,}" in
